@@ -419,6 +419,8 @@ def to_glb(
         debug (bool): Whether to print debug information.
         verbose (bool): Whether to print progress.
     """
+    os.environ["TORCH_CUDA_ARCH_LIST"] = "8.6"
+    
     vertices = mesh.vertices.cpu().numpy()
     faces = mesh.faces.cpu().numpy()
     
